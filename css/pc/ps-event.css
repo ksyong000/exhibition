@@ -69,6 +69,20 @@
   gap: 16px;
 }
 
+.ps-exhibition-root .exhibition-con .exhibition-swiper {
+  width: 1200px;
+  margin-top: 100px;
+  color: #fff;
+  overflow: hidden;
+  text-align: left;
+}
+
+.ps-exhibition-root .exhibition-con .exhibition-swiper h4 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* 상품링크 */
 .ps-exhibition-root .goodsLink {
   padding: 7px 28px 7px 8px;
   backdrop-filter: blur(30px);

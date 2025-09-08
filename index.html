@@ -1905,6 +1905,60 @@
                       </div>
                     </div>
                   </div>
+                  <div class="exhibition-swiper">
+                    <h4>기획전 타이틀</h4>
+                    <div class="ex-swiper swiper-container">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <div class="img-wrap">
+                            <img src="https://image.prospecs.com/front/images/planning/9572/img/sec4_01.jpg"
+                              alt="1978년" />
+                          </div>
+                          <p>
+                            <span>1978년. </span> 미국의 마라톤 선수 데이브
+                            맥길리브레이가 MARATHON 220을 착용하고 총 5,512km에
+                            이르는 미국 횡단에 성공했습니다.
+                          </p>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="img-wrap">
+                            <img src="https://image.prospecs.com/front/images/planning/9572/img/sec4_02.jpg"
+                              alt="1979년" />
+                          </div>
+                          <p>
+                            <span>1979년. </span> 트레이닝 플랫 신발로 Runner’s
+                            World Shoe Survey에서 5 STAR를 받았습니다.
+                          </p>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="img-wrap">
+                            <img src="https://image.prospecs.com/front/images/planning/9572/img/sec4_03.jpg"
+                              alt="2022년" />
+                          </div>
+                          <p>
+                            <span>2022년. </span>‘거리를 정복할 러닝화’라는 찬사를
+                            받은 장거리 운동에 특화된 마라톤220을 복각했습니다.
+                          </p>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="img-wrap">
+                            <img src="https://image.prospecs.com/front/images/planning/9572/img/sec4_04.jpg"
+                              alt="2025년" />
+                          </div>
+                          <p>
+                            <span>2025년. </span>브랜드 시그니처 컬러인 레드를
+                            중심으로, 화이트와 블랙 모노톤을 조화롭게 곁들여 새롭게
+                            선보입니다.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-btn-wrap">
+                      <button class="swiper-prev-btn">좌</button>
+                      <span></span>
+                      <button class="swiper-next-btn">우</button>
+                    </div>
+                  </div>
                 </div>
               </div>
               <script>
@@ -1913,6 +1967,28 @@
                   $('body,html').css('background', '#000');
                 } else {
                   $('body,html').removeAttr('style');
+                }
+
+                const exSwiper = new Swiper(".ex-swiper", {
+                  slidesPerView: 3,
+                  spaceBetween: 10,
+                  navigation: {
+                    nextEl: '.exhibition-swiper .swiper-next-btn',
+                    prevEl: '.exhibition-swiper .swiper-prev-btn'
+                  },
+                  on: {
+                    init: function () {
+                      updateSlideInfo(this);
+                    },
+                    slideChange: function () {
+                      updateSlideInfo(this);
+                    }
+                  }
+                });
+                function updateSlideInfo(swiperInstance) {
+                  var currentSlide = swiperInstance.realIndex + 1;
+                  var totalSlides = swiperInstance.slides.length;
+                  document.querySelector('.exhibition-swiper .swiper-btn-wrap span').textContent = currentSlide + " / " + totalSlides;
                 }
               </script>
 
